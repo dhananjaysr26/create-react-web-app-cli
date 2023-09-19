@@ -1,7 +1,16 @@
 {
   "name": "create-react-web-app",
-  "version": "0.0.0",
+  "version": "1.0.1",
   "license": "MIT",
+  "description": "A Simple Powerful Cli to Create Web App with ReactJs!",
+  "keywords": [
+    "reactjs",
+    " React CLI",
+    "typescript",
+    "CLI"
+  ],
+  "author": "Dhananjay Singh",
+  "homepage": "https://github.com/dhananjaysr26/create-react-web-app-cli#readme",
   "scripts": {
     "start-local-npm-registry": "npx nx local-registry",
     "local-publish": "npx nx run-many -t publish"
