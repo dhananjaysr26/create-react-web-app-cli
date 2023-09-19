@@ -1,8 +1,8 @@
 {
   "name": "create-react-web-app-cli",
-  "version": "0.0.1",
+  "version": "1.1.7",
   "dependencies": {
-    "create-react-web-app-cli": "1.2.0",
+    "create-react-web-app-cli": "1.1.7",
     "react": "latest",
     "react-dom": "latest",
     "react-scripts": "latest"
@@ -14,7 +14,10 @@
     "nx": "16.8.1"
   },
   "type": "commonjs",
-  "main": "./src/index.js",
+  "main": "dist/create-react-web-app-cli/src/index.js",
   "typings": "./src/index.d.ts",
-  "generators": "./generators.json"
+  "generators": "./generators.json",
+  "files": [
+    "./dist/**/*"
+  ]
 }

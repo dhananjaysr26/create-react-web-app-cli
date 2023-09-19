@@ -1,6 +1,6 @@
 {
   "name": "create-react-web-app",
-  "version": "0.0.1",
+  "version": "1.1.7",
   "dependencies": {
     "create-nx-workspace": "16.8.1",
     "@clack/prompts": "^0.7.0",
