@@ -1,0 +1,70 @@
+{
+  "name": "create-react-web-app-cli",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/create-react-web-app-cli/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/create-react-web-app-cli",
+        "main": "packages/create-react-web-app-cli/src/index.ts",
+        "tsConfig": "packages/create-react-web-app-cli/tsconfig.lib.json",
+        "assets": [
+          "packages/create-react-web-app-cli/*.md",
+          {
+            "input": "./packages/create-react-web-app-cli/src",
+            "glob": "**/!(*.ts)",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/create-react-web-app-cli/src",
+            "glob": "**/*.d.ts",
+            "output": "./src"
+          },
+          {
+            "input": "./packages/create-react-web-app-cli",
+            "glob": "generators.json",
+            "output": "."
+          },
+          {
+            "input": "./packages/create-react-web-app-cli",
+            "glob": "executors.json",
+            "output": "."
+          }
+        ]
+      }
+    },
+    "publish": {
+      "command": "node tools/scripts/publish.mjs create-react-web-app-cli {args.ver} {args.tag}",
+      "dependsOn": ["build"]
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": [
+          "packages/create-react-web-app-cli/**/*.ts",
+          "packages/create-react-web-app-cli/package.json",
+          "packages/create-react-web-app-cli/generators.json"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "packages/create-react-web-app-cli/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    }
+  },
+  "tags": []
+}

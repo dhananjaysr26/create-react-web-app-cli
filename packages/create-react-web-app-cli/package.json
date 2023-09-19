@@ -1,0 +1,20 @@
+{
+  "name": "create-react-web-app-cli",
+  "version": "0.0.1",
+  "dependencies": {
+    "create-react-web-app-cli": "1.2.0",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-scripts": "latest"
+  },
+  "devDependencies": {
+    "@nx/workspace": "16.8.1",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "nx": "16.8.1"
+  },
+  "type": "commonjs",
+  "main": "./src/index.js",
+  "typings": "./src/index.d.ts",
+  "generators": "./generators.json"
+}
